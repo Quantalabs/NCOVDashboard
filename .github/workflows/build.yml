@@ -20,5 +20,5 @@ jobs:
         python noverview.py
         python overview.py
         python ntable.py
-        python table.py
+        python tables.py
         python pcd.py
