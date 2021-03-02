@@ -1,4 +1,4 @@
-name: Update Case Data 
+name: Build 
 
 on: [push]
 
