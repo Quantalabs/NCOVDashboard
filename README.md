@@ -4,6 +4,7 @@
   <a href="https://github.com/Quantalabs/NCOVDashboard/blob/main/LICENSE" target="_blank">
     <img alt="License: GPL--3.0" src="https://img.shields.io/badge/License-GPL--3.0-yellow.svg" />
   </a>
+  <a href="https://github.com/Quantalabs/NCOVDashboard/actions/workflows/build.yml"><img src="https://github.com/Quantalabs/NCOVDashboard/actions/workflows/build.yml/badge.svg?branch=main&amp;event=push" alt="Build"></a>
 </p>
 
 <blockquote align='center'>A simple COVID-19 Dashboard</blockquote>
