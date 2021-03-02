@@ -24,3 +24,7 @@ If you're adding a new country, then make sure that:
 4. You've created a new directory for the country, like the [`/us`](https://github.com/Quantalabs/NCOVDashboard/tree/main/us) directory.
 
 You can then submit your PR to the repo, and it'll be merged ASAP.
+
+## Other info
+
+Make sure to follow the Code Of Conduct no matter what, with an issue or PR, and submit an issue if you see something that you think shouldn't be done.
