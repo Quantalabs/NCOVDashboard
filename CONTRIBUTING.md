@@ -4,7 +4,7 @@ Welcome to the Contributing Guidelines!
 
 ## Issues
 
-Follow the issue template based on what you are submitting (eg. Bugs uses Bug template, Feature uses Feature template, etc.). Next, make sure that all fields are filled out, otherwise your issue will be closed automatically by the issue workflow.
+Follow the issue template based on what you are submitting (eg. Bugs uses Bug template, Feature uses Feature template, etc.). Next, make sure that all fields are filled out.
 
 ## PR's 
 
