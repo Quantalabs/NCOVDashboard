@@ -1,0 +1,11 @@
+extraction:
+  javascript:
+    index:
+    exclude:
+      - assets/js/
+  python:
+    python_setup:
+      version: 3
+      requirements_files:
+        - python-requirements.txt
+      setup_py: false
