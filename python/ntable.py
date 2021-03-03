@@ -36,19 +36,31 @@ with open('../us/ntable.html', 'a') as table:
     table.write('''
     <table align="center" class='table' width='100%'>
         <tr class='text-primary'>
-            <th>Last Updated</th>
+            <th>Date</th>
             <th>Cases</th>
             <th>Deaths</th>
+            <th>New Cases</th>
         </tr>
     ''')
-    for x in range(0, 55):
-        table.write('''
-        <tr>
-            <th>'''+str(df["date"][x])+'''</th>
-            <th>'''+str(df["cases"][x])+'''</th> 
-            <th>'''+str(df["deaths"][x])+'''</th> 
-        <tr>
-        ''')
+    for x in range(len(df["date"].to_list())):
+        if x == 0:
+            table.write('''
+            <tr>
+                <th>'''+str(df["date"][x])+'''</th>
+                <th>'''+str(df["cases"][x])+'''</th> 
+                <th>'''+str(df["deaths"][x])+'''</th>
+                <th>'''+str(df["cases"][x])+'''</th> 
+            <tr>
+            ''')
+        else:
+            table.write('''
+            <tr>
+                <th>'''+str(df["date"][x])+'''</th>
+                <th>'''+str(df["cases"][x])+'''</th> 
+                <th>'''+str(df["deaths"][x])+'''</th>
+                <th>'''+str(df["cases"][x]-df["cases"][x-1])+'''</th> 
+            <tr>
+            ''')
 
     table.write('''</table>
     </body>
