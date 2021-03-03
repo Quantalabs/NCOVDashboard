@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 import io
+import datetime
 
 url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-states.csv"
 download = requests.get(url).content
@@ -34,15 +35,10 @@ with open('../us/overview.html', 'w') as overview:
 
 with open('../us/overview.html', 'a') as overview:
     df.sort_values(by=['cases'], inplace=True, ascending=False)
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Cases:   '+df['state'].to_list()[0]+'</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Cases: '+df['state'].to_list()[-1]+'</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Cases:   '+df['state'].to_list()[0]+' with '+ '{:,.2f}'.format(df['cases'].to_list()[0])+' cases</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Cases: '+df['state'].to_list()[-1]+' with '+ '{:,.2f}'.format(df['cases'].to_list()[-1])+' cases</h6><br>')
     df.sort_values(by=['deaths'], inplace=True, ascending=False)
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Deaths: '+df['state'].to_list()[0]+'</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Deaths: '+df['state'].to_list()[-1]+'</h6><br>')
-    df.sort_values(by=['confirmed_cases'], inplace=True, ascending=False)
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest <i>Confirmed</i> Cases:   '+df['state'].to_list()[0]+'</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest <i>Confirmed</i> Cases: '+df['state'].to_list()[-1]+'</h6><br>')
-    df.sort_values(by=['confirmed_deaths'], inplace=True, ascending=False)
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest <i>Confirmed</i> Deaths:   '+df['state'].to_list()[0]+'</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest <i>Confirmed</i> Deaths: '+df['state'].to_list()[-1]+'</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Deaths: '+df['state'].to_list()[0]+' with '+'{:,.2f}'.format(df['deaths'].to_list()[0])+' deaths</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Deaths: '+df['state'].to_list()[-1]+' with '+'{:,.2f}'.format(df['deaths'].to_list()[-1])+' deaths</h6><br>')
+    
     overview.write('</body></html>')
