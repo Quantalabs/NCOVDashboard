@@ -6,6 +6,7 @@
     <img alt="License: GPL--3.0" src="https://img.shields.io/badge/License-GPL--3.0-yellow.svg" />
   </a>
   <a href="https://github.com/Quantalabs/NCOVDashboard/actions/workflows/build.yml"><img src="https://github.com/Quantalabs/NCOVDashboard/actions/workflows/build.yml/badge.svg?branch=main&amp;event=push" alt="Build"></a>
+  <img alt="Lines of Code" src="https://img.shields.io/tokei/lines/github/epispot/epispot?color=orange">
 </p>
 
 <blockquote align='center'>A simple COVID-19 Dashboard</blockquote>
