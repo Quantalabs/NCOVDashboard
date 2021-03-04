@@ -35,10 +35,10 @@ with open('../us/overview.html', 'w') as overview:
 
 with open('../us/overview.html', 'a') as overview:
     df.sort_values(by=['cases'], inplace=True, ascending=False)
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Cases:   '+df['state'].to_list()[0]+' with '+ '{:,.2f}'.format(df['cases'].to_list()[0])+' cases</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Cases: '+df['state'].to_list()[-1]+' with '+ '{:,.2f}'.format(df['cases'].to_list()[-1])+' cases</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Cases:   '+df['state'].to_list()[0]+' with '+ '{:,}'.format(df['cases'].to_list()[0])+' cases</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Cases: '+df['state'].to_list()[-1]+' with '+ '{:,}'.format(df['cases'].to_list()[-1])+' cases</h6><br>')
     df.sort_values(by=['deaths'], inplace=True, ascending=False)
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Deaths: '+df['state'].to_list()[0]+' with '+'{:,.2f}'.format(df['deaths'].to_list()[0])+' deaths</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Deaths: '+df['state'].to_list()[-1]+' with '+'{:,.2f}'.format(df['deaths'].to_list()[-1])+' deaths</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Deaths: '+df['state'].to_list()[0]+' with '+'{:,}'.format(df['deaths'].to_list()[0])+' deaths</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Deaths: '+df['state'].to_list()[-1]+' with '+'{:,}'.format(df['deaths'].to_list()[-1])+' deaths</h6><br>')
     
     overview.write('</body></html>')

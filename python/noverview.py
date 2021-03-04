@@ -33,8 +33,8 @@ with open('../us/noverview.html', 'w') as overview:
     overview.write(htmlBase)
 
 with open('../us/noverview.html', 'a') as overview:
-    deaths = ('{:,.2f}'.format(df['deaths'].to_list()[-1]))
-    cases = ('{:,.2f}'.format(df['cases'].to_list()[-1]))
+    deaths = ('{:,}'.format(df['deaths'].to_list()[-1]))
+    cases = ('{:,}'.format(df['cases'].to_list()[-1]))
 
     overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Cases:   '+str(cases)+'</h6><br>')
     overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Deaths: '+str(deaths)+'</h6><br>')

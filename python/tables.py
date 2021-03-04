@@ -47,8 +47,8 @@ with open('../us/table.html', 'a') as table:
         <tr>
             <th>'''+str(df["date"][x])+'''</th> 
             <th>'''+str(df["state"][x])+'''</th> 
-            <th>'''+str(df["cases"][x])+'''</th> 
-            <th>'''+str(df["deaths"][x])+'''</th> 
+            <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
+            <th>'''+'{:,}'.format(df["deaths"][x])+'''</th> 
         <tr>
         ''')
 

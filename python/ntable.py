@@ -47,18 +47,18 @@ with open('../us/ntable.html', 'a') as table:
             table.write('''
             <tr>
                 <th>'''+str(df["date"][x])+'''</th>
-                <th>'''+str(df["cases"][x])+'''</th> 
-                <th>'''+str(df["deaths"][x])+'''</th>
-                <th>'''+str(df["cases"][x])+'''</th> 
+                <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
+                <th>'''+'{:,}'.format(df["deaths"][x])+'''</th>
+                <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
             <tr>
             ''')
         else:
             table.write('''
             <tr>
                 <th>'''+str(df["date"][x])+'''</th>
-                <th>'''+str(df["cases"][x])+'''</th> 
-                <th>'''+str(df["deaths"][x])+'''</th>
-                <th>'''+str(df["cases"][x]-df["cases"][x-1])+'''</th> 
+                <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
+                <th>'''+'{:,}'.format(df["deaths"][x])+'''</th>
+                <th>'''+'{:,}'.format(df["cases"][x]-df["cases"][x-1])+'''</th> 
             <tr>
             ''')
 
