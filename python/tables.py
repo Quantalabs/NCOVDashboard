@@ -1,8 +1,10 @@
 import pandas as pd
 import requests
 import io
+from datetime import date, timedelta
 
-url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-states.csv"
+dates = date.today()-timedelta(days=1)
+url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/"+dates.strftime('%m-%d-%Y')+".csv"
 download = requests.get(url).content
 
 df = pd.read_csv(io.StringIO(download.decode('utf-8')))
@@ -37,18 +39,22 @@ with open('../us/table.html', 'a') as table:
     <table align="center" class='table' width='100%'>
         <tr class='text-primary'>
             <th>Last Updated</th> 
-            <th>State</th> 
+            <th>State/Territory</th> 
             <th>Cases</th>
             <th>Deaths</th>
+            <th>Recovered</th>
+            <th>Active</th>
         </tr>
     ''')
-    for x in range(0, 55):
+    for x in range(0, 58):
         table.write('''
         <tr>
-            <th>'''+str(df["date"][x])+'''</th> 
-            <th>'''+str(df["state"][x])+'''</th> 
-            <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
-            <th>'''+'{:,}'.format(df["deaths"][x])+'''</th> 
+            <th>'''+str(df["Last_Update"][x])+'''</th> 
+            <th>'''+str(df["Province_State"][x])+'''</th> 
+            <th>'''+'{:,}'.format(df["Confirmed"][x])+'''</th> 
+            <th>'''+'{:,}'.format(df["Deaths"][x])+'''</th> 
+            <th>'''+'{:,}'.format(int(df["Confirmed"][x])-int(df["Active"][x]))+'''</th> 
+            <th>'''+'{:,}'.format(int(df["Active"][x]))+'''</th> 
         <tr>
         ''')
 
