@@ -1,8 +1,11 @@
 import pandas as pd
 import requests
 import io
+import numpy as np
+from datetime import date, timedelta
 
-url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us.csv"
+dates = date.today()-timedelta(days=1)
+url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/"+dates.strftime('%m-%d-%Y')+".csv"
 download = requests.get(url).content
 
 df = pd.read_csv(io.StringIO(download.decode('utf-8')))
@@ -33,9 +36,13 @@ with open('../us/noverview.html', 'w') as overview:
     overview.write(htmlBase)
 
 with open('../us/noverview.html', 'a') as overview:
-    deaths = ('{:,}'.format(df['deaths'].to_list()[-1]))
-    cases = ('{:,}'.format(df['cases'].to_list()[-1]))
+    deaths = '{:,}'.format(np.sum(np.array(df['Deaths'].to_list())))
+    cases = '{:,}'.format(np.sum(np.array(df['Confirmed'].to_list())))
+    recovered = '{:,}'.format(np.sum(np.array(df['Confirmed'].to_list()))-np.sum(np.array(list(map(int, df['Active'].to_list())))))
+    active = '{:,}'.format(np.sum(np.array(list(map(int, df['Active'].to_list())))))
 
     overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Cases:   '+str(cases)+'</h6><br>')
     overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Deaths: '+str(deaths)+'</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Recovered: '+str(recovered)+'</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Active: '+str(active)+'</h6><br>')
     overview.write('</body></html>')
