@@ -6,6 +6,7 @@ from datetime import date, timedelta
 
 dates = date.today()-timedelta(days=1)
 url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/"+dates.strftime('%m-%d-%Y')+".csv"
+print(url)
 download = requests.get(url).content
 
 df = pd.read_csv(io.StringIO(download.decode('utf-8')))
