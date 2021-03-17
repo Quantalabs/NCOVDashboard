@@ -1,3 +1,4 @@
+## IMPORTANT: For development purposes, the dashboard has been temporarily stopped.
 <p align='center'><img src="https://i.ibb.co/rvN91xr/Screenshot-2021-03-02-153146.jpg" alt="NCovDashboard Logo" border="0"></p>
 <h1 align="center">NCovDashboard </h1>
 <p align='center'>
