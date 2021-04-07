@@ -53,16 +53,18 @@ with open('../us/ntable.html', 'a') as table:
             <tr>
             ''')
         else:
+            amb = None
+            try: 
+                amb = '''<th>'''+'{:,}'.format(df["cases"][x]-df["cases"][x-1])+'''</th>'''
+            except:
+                '''<th> No current data </th>'''
+                amb = '''No Case Data!'''
             table.write('''
             <tr>
                 <th>'''+str(df["date"][x])+'''</th>
                 <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
                 <th>'''+'{:,}'.format(df["deaths"][x])+'''</th>'''+
-                try: 
-                    '''<th>'''+'{:,}'.format(df["cases"][x]-df["cases"][x-1])+'''</th>'''
-                except:
-                    '''<th> No current data </th>'''
-            + '''<tr>
+                amb+ '''<tr>
             ''')
 
     table.write('''</table>
