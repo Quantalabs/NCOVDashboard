@@ -13,7 +13,7 @@
 
 <blockquote align='center'>A simple COVID-19 Dashboard</blockquote>
 
-[View the Dashboard here](https://quantalabs.github.io/NCOVDashboard)
+[View the Dashboard here](https://quantalabs.github.io/NCOVDashboard/us)
 
 ## Author
 
