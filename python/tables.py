@@ -50,7 +50,7 @@ with open('../us/table.html', 'a') as table:
         active = 'N/A'
         recovered = 'N/A'
         
-        if df["Active"][x]:
+        if df["Active"][x] != NaN:
             active = int(df["Active"][x])
             recovered = int(df["Confirmed"][x]) - active
             
