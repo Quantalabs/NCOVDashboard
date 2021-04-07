@@ -47,16 +47,21 @@ with open('../us/table.html', 'a') as table:
         </tr>
     ''')
     for x in range(0, 58):
-        print(str(df["Active"][x]))
-        print(str(df["Confirmed"][x]))
+        active = 'N/A'
+        recovered = 'N/A'
+        
+        if df["Active"][x]:
+            active = int(df["Active"][x]))
+            recovered = int(df["Confirmed"][x]) - active
+            
         table.write('''
         <tr>
             <th>'''+str(df["Last_Update"][x])+'''</th> 
             <th>'''+str(df["Province_State"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Confirmed"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Deaths"][x])+'''</th> 
-            <th>'''+'{:,}'.format(int(df["Confirmed"][x])-int(df["Active"][x]))+'''</th> 
-            <th>'''+'{:,}'.format(int(df["Active"][x]))+'''</th> 
+            <th>'''+'{:,}'.format(str(recovered))+'''</th> 
+            <th>'''+'{:,}'.format(str(active))+'''</th> 
         <tr>
         ''')
 
