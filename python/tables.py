@@ -51,7 +51,7 @@ with open('../us/table.html', 'a') as table:
         recovered = 'N/A'
         
         if df["Active"][x]:
-            active = int(df["Active"][x]))
+            active = int(df["Active"][x])
             recovered = int(df["Confirmed"][x]) - active
             
         table.write('''
