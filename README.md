@@ -5,7 +5,7 @@
   <a href="https://github.com/Quantalabs/NCOVDashboard/blob/main/LICENSE" target="_blank">
     <img alt="License: GPL--3.0" src="https://img.shields.io/badge/License-GPL--3.0-yellow.svg" />
   </a>
-  <a href="https://github.com/Quantalabs/NCOVDashboard/actions/workflows/build.yml"><img src="https://github.com/Quantalabs/NCOVDashboard/actions/workflows/build.yml/badge.svg?branch=main&amp;event=push" alt="Build"></a>
+  <a href="https://github.com/Quantalabs/NCOVDashboard/actions/workflows/build.yml"><img src="https://img.shields.io/github/workflow/status/Quantalabs/NCOVDashboard/Update%20Case%20Data" alt="Build"></a>
   <img alt="Lines of Code" src="https://img.shields.io/tokei/lines/github/epispot/epispot?color=orange">
   <a href="https://lgtm.com/projects/g/Quantalabs/NCOVDashboard/context:python"><img alt="Language grade: Python" src="https://img.shields.io/lgtm/grade/python/g/Quantalabs/NCOVDashboard.svg?logo=lgtm&logoWidth=18"/></a>
   <a href="https://lgtm.com/projects/g/Quantalabs/NCOVDashboard/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/Quantalabs/NCOVDashboard.svg?logo=lgtm&logoWidth=18"/></a>
