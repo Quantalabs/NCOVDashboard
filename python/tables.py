@@ -47,7 +47,7 @@ with open('../us/table.html', 'a') as table:
         </tr>
     ''')
     for x in range(0, 58):
-        print(str(df["Active"][x])))
+        print(str(df["Active"][x]))
         print(str(df["Confirmed"][x]))
         table.write('''
         <tr>
