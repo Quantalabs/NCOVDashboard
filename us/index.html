@@ -32,116 +32,153 @@ Coded by www.creative-tim.com
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <style>
+    /** CSS Loader 8 from @Afif13 **/
+    .shapes-8 {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      animation: sh8-0 1.5s infinite linear;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 25%;
+    }
+    .shapes-8:before,
+    .shapes-8:after {
+      content: "";
+      grid-area: 1/1;
+      background:#25b09b;
+      clip-path: polygon(0 0%,100% 0,100% 100%);
+      animation: inherit;
+      animation-name: sh8-1;
+    }
+    .shapes-8:after {
+      --s:-1;
+    }
+    @keyframes sh8-0 {
+      66%      {transform: skewX(0deg)}
+      80%,100% {transform: skewX(-45deg)}
+    }
+    @keyframes sh8-1 {
+      0%   {transform:scale(var(--s,1)) translate(-0.5px,0)}
+      33%  {transform:scale(var(--s,1)) translate(calc(1px - 50%),calc(1px - 50%))}
+      66%  {transform:scale(var(--s,1)) translate(calc(1px - 50%),0%)}
+      100% {transform:scale(var(--s,1)) translate(calc(0.5px - 50%),0%)}
+    }
+  </style>
 </head>
 
-<body class="">
-  <div class="wrapper ">
-    <div class="sidebar" data-color="white" data-active-color="success">
-      <div class="logo">
-        <a href="https://github.com/Quantalabs/NCovDashboard" class="simple-text logo-mini">
-          <div class="logo-image-small">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb_qbhaEx_L3nY6UtxPw7DLdh8UfUHcXgFCg&usqp=CAU">
-          </div>
-        </a>
-        <a href="https://github.com/Quantalabs/NCovDashboard" class="logo-normal" style="text-decoration: none; font-size: large;">
-          NCovDashboard
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
-        </a>
-      </div>
-      <div class="sidebar-wrapper" style="overflow-x: hidden;">
-        <ul class="nav">
-          <li class="active ">
-            <a href="index.html">
-              <i class="nc-icon nc-bank"></i>
-              <p>Overview</p>
-            </a>
-          </li>
-          <li>
-            <a href="numbers.html">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Numbers</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/Quantalabs/NCOVDashboard">
-              <i class="nc-icon nc-air-baloon"></i>
-              <p>GitHub</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="main-panel">
-      <div class="content">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body">
-                <div id='HCC' class="text-center">
-                  <h5>Highest Case Count</h5>
-                  <img src="graph.png">
-                  <br>
-                  Data from John Hopkins University Dataset
-                </div>
-              </div>
+<body onload="myFunction()" style="margin:0;">
+  <div class="shapes-8" id="loader"></div>
+  <div id='body-content' style='display: none;'>
+    <div class="wrapper">
+      <div class="sidebar" data-color="white" data-active-color="success">
+        <div class="logo">
+          <a href="https://github.com/Quantalabs/NCovDashboard" class="simple-text logo-mini">
+            <div class="logo-image-small">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb_qbhaEx_L3nY6UtxPw7DLdh8UfUHcXgFCg&usqp=CAU">
             </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body">
-                <div id='QS' class="text-center">
-                  <h5>Quick Stats</h5>
-                  <sub>Includes US Territories</sub>
-                  <br><br>
-                  <br><br>
-                  <br><br>
-                  <iframe src="overview.html" width="100%" style="border: hidden; scroll-behavior: smooth; overflow-x: hidden; overflow-y: visible; resize: vertical;height: 35vh;"></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
+          </a>
+          <a href="https://github.com/Quantalabs/NCovDashboard" class="logo-normal" style="text-decoration: none; font-size: large;">
+            NCovDashboard
+            <!-- <div class="logo-image-big">
+              <img src="../assets/img/logo-big.png">
+            </div> -->
+          </a>
+        </div>
+        <div class="sidebar-wrapper" style="overflow-x: hidden;">
+          <ul class="nav">
+            <li class="active ">
+              <a href="index.html">
+                <i class="nc-icon nc-bank"></i>
+                <p>Overview</p>
+              </a>
+            </li>
+            <li>
+              <a href="numbers.html">
+                <i class="nc-icon nc-diamond"></i>
+                <p>Numbers</p>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Quantalabs/NCOVDashboard">
+                <i class="nc-icon nc-air-baloon"></i>
+                <p>GitHub</p>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="col-sm-10" style="margin-left: auto; margin-right: auto;">
-        <div class="card card-stats">
-          <div class="card-body">
-            <div id='PCD' class="text-center">
-              <h5>US Cases</h5>
-              <sub>Includes US Territories</sub>
-              <br><br>
-              <img src="pcd.png">
-              From the NY Times Dataset
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <footer class="footer"">
-        <div class="container-fluid">
+      <div class="main-panel">
+        <div class="content">
           <div class="row">
-            <nav class="footer-nav">
-              <ul>
-                <li><a href="https://github.com/Quantalabs/NCovDashboard" target="_blank">GitHub</a></li>
-                <li><a href="https://github.com/Quantalabs/NCovDashboard/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></li>
-                <li><a href="https://github.com/Quantalabs/NCovDashboard/blob/main/LICENSE" target="_blank">License</a></li>
-              </ul>
-            </nav>
-            <div class="credits ml-auto">
-              NOTE: Data may not always be accurate, and updates every 24 hrs.
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-body">
+                  <div id='HCC' class="text-center">
+                    <h5>Highest Case Count</h5>
+                    <img src="graph.png">
+                    <br>
+                    Data from John Hopkins University Dataset
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="credits ml-auto">
-                <span class="copyright">
-                    © 2021 Quantalabs, Template from Creative Tim
-                </span>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-body">
+                  <div id='QS' class="text-center">
+                    <h5>Quick Stats</h5>
+                    <sub>Includes US Territories</sub>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <iframe src="overview.html" width="100%" style="border: hidden; scroll-behavior: smooth; overflow-x: hidden; overflow-y: visible; resize: vertical;height: 35vh;"></iframe>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
+        <div class="col-sm-10" style="margin-left: auto; margin-right: auto;">
+          <div class="card card-stats">
+            <div class="card-body">
+              <div id='PCD' class="text-center">
+                <h5>US Cases</h5>
+                <sub>Includes US Territories</sub>
+                <br><br>
+                <img src="pcd.png">
+                From the NY Times Dataset
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer class="footer"">
+          <div class="container-fluid">
+            <div class="row">
+              <nav class="footer-nav">
+                <ul>
+                  <li><a href="https://github.com/Quantalabs/NCovDashboard" target="_blank">GitHub</a></li>
+                  <li><a href="https://github.com/Quantalabs/NCovDashboard/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></li>
+                  <li><a href="https://github.com/Quantalabs/NCovDashboard/blob/main/LICENSE" target="_blank">License</a></li>
+                </ul>
+              </nav>
+              <div class="credits ml-auto">
+                NOTE: Data may not always be accurate, and updates every 24 hrs.
+              </div>
+              <div class="credits ml-auto">
+                  <span class="copyright">
+                      © 2021 Quantalabs, Template from Creative Tim
+                  </span>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
   </div>
   <!--   Core JS Files   -->
@@ -154,6 +191,16 @@ Coded by www.creative-tim.com
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
   <script>
+    var myVar;
+
+    function myFunction() {
+      myVar = setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("body-content").style.display = "block";
+    }
   </script>
 </body>
 
