@@ -15,10 +15,5 @@ jobs:
         pip install -r python-requirements.txt
     - name: Run python script to update info
       run: |
-        cd python
-        python graphs.py
-        python noverview.py
-        python overview.py
-        python ntable.py
-        python tables.py
-        python pcd.py
+        cd scripts
+        update.sh
