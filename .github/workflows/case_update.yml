@@ -19,7 +19,7 @@ jobs:
     - name: Run python script to update info
       run: |
         cd scripts
-        update.sh
+        bash update.sh
     - name: Configure Git
       run: |
         git config user.name github-actions
