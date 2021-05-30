@@ -42,8 +42,6 @@ with open('../us/table.html', 'a') as table:
             <th>State/Territory</th> 
             <th>Cases</th>
             <th>Deaths</th>
-            <th>Recovered</th>
-            <th>Active</th>
         </tr>
     ''')
     for x in range(0, 58):
