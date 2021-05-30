@@ -64,6 +64,7 @@ with open('../us/table.html', 'a') as table:
             recovered = int(df["Confirmed"][x]) - active
         ''' 
         for z in vaccinations:
+            print(z[0])
             if z[0] == df["Province_State"][x]:
                 vax_data = z[1]
 
