@@ -14,9 +14,9 @@ df2 = pd.read_csv(io.StringIO(download2.decode('utf-8')))
 
 vaccinations = []
 
-for x in df2["date"]:
-    if x == dates:
-        vaccinations.append([df2["location"], df2["total_vaccinations"]])
+for x in range(0, len(df2["date"])):
+    if df2["date"][x] == dates.strftime('%Y-%m-%d'):
+        vaccinations.append([df2["location"][x], df2["total_vaccinations"][x]])
 
 htmlBase = '''
 <!DOCTYPE html>
@@ -64,7 +64,6 @@ with open('../us/table.html', 'a') as table:
             recovered = int(df["Confirmed"][x]) - active
         ''' 
         for z in vaccinations:
-            print(z[0])
             if z[0] == df["Province_State"][x]:
                 vax_data = z[1]
 
@@ -74,7 +73,7 @@ with open('../us/table.html', 'a') as table:
             <th>'''+str(df["Province_State"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Confirmed"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Deaths"][x])+'''</th> 
-            <th>'''+str(vax_data)+'''</th>
+            <th>'''+str(int(vax_data))+'''</th>
         <tr>
         ''')
 
