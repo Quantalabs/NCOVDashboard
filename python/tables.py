@@ -7,14 +7,13 @@ dates = date.today()-timedelta(days=1)
 url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/"+dates.strftime('%m-%d-%Y')+".csv"
 download = requests.get(url).content
 url2 = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/us_state_vaccinations.csv"
-download2 = requests.get(url).content
+download2 = requests.get(url2).content
 
 df = pd.read_csv(io.StringIO(download.decode('utf-8')))
 df2 = pd.read_csv(io.StringIO(download2.decode('utf-8')))
 
 vaccinations = []
 
-print(df2.keys)
 for x in df2["date"]:
     if x == dates:
         vaccinations.append([df2["location"], df2["total_vaccinations"]])
