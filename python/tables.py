@@ -14,6 +14,7 @@ df2 = pd.read_csv(io.StringIO(download2.decode('utf-8')))
 
 vaccinations = []
 
+print(df2.keys)
 for x in df2["date"]:
     if x == dates:
         vaccinations.append([df2["location"], df2["total_vaccinations"]])
