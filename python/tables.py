@@ -6,8 +6,17 @@ from datetime import date, timedelta
 dates = date.today()-timedelta(days=1)
 url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/"+dates.strftime('%m-%d-%Y')+".csv"
 download = requests.get(url).content
+url2 = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/us_state_vaccinations.csv"
+download2 = requests.get(url).content
 
 df = pd.read_csv(io.StringIO(download.decode('utf-8')))
+df2 = pd.read_csv(io.StringIO(download.decode('utf-8')))
+
+vaccinations = []
+
+for x in df2["date"]:
+    if x == dates:
+        vaccinations.append([df2["location"], df2["total_vaccinations"]])
 
 htmlBase = '''
 <!DOCTYPE html>
@@ -42,6 +51,7 @@ with open('../us/table.html', 'a') as table:
             <th>State/Territory</th> 
             <th>Cases</th>
             <th>Deaths</th>
+            <th>Vaccinations</th>
         </tr>
     ''')
     for x in range(0, 58):
@@ -53,13 +63,17 @@ with open('../us/table.html', 'a') as table:
             active = int(df["Active"][x])
             recovered = int(df["Confirmed"][x]) - active
         ''' 
-         
+        for z in vaccinations:
+            if z[0] == df["Province_State"][x]:
+                vax_data = z[1]
+
         table.write('''
         <tr>
             <th>'''+str(df["Last_Update"][x])+'''</th> 
             <th>'''+str(df["Province_State"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Confirmed"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Deaths"][x])+'''</th> 
+            <th>'''+str(vax_data)+'''</th>
         <tr>
         ''')
 
