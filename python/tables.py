@@ -60,8 +60,6 @@ with open('../us/table.html', 'a') as table:
             <th>'''+str(df["Province_State"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Confirmed"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Deaths"][x])+'''</th> 
-            <th>'''+'{:,}'.format(0)+'''</th> 
-            <th>'''+'{:,}'.format(0)+'''</th> 
         <tr>
         ''')
 
