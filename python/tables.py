@@ -10,7 +10,7 @@ url2 = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/
 download2 = requests.get(url).content
 
 df = pd.read_csv(io.StringIO(download.decode('utf-8')))
-df2 = pd.read_csv(io.StringIO(download.decode('utf-8')))
+df2 = pd.read_csv(io.StringIO(download2.decode('utf-8')))
 
 vaccinations = []
 
