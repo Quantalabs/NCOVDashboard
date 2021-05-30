@@ -46,30 +46,30 @@ with open('../us/ntable.html', 'a') as table:
         if x == 0:
             table.write('''
             <tr>
-                <th>'''+str(df["date"][x])+'''</th>
-                <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
-                <th>'''+'{:,}'.format(df["deaths"][x])+'''</th>
-                <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
+                <th>''' + str(df["date"][x])+'''</th>
+                <th>''' + '{:,}'.format(df["cases"][x])+'''</th>
+                <th>''' + '{:,}'.format(df["deaths"][x])+'''</th>
+                <th>''' + '{:,}'.format(df["cases"][x])+'''</th>
             <tr>
             ''')
         else:
-            #print('Cases x '+str(df["cases"][x]))
-            #print('Cases x-1 '+str(df["cases"][x-1]))
-            #print('Deaths '+str(df["deaths"][x]))
-            #print('Date '+str(df["date"][x]))
+            # print('Cases x ' + str(df["cases"][x]))
+            # print('Cases x-1 ' + str(df["cases"][x-1]))
+            # print('Deaths ' + str(df["deaths"][x]))
+            # print('Date ' + str(df["date"][x]))
             amb = None
             try: 
-                amb = '''<th>'''+'{:,}'.format(df["cases"][x]-df["cases"][x-1])+'''</th>'''
+                amb = '''<th>''' + '{:,}'.format(df["cases"][x]-df["cases"][x-1])+'''</th>'''
             except:
-                '''<th> No current data </th>'''
+                '''<th>No current data </th>'''
                 amb = '''No Case Data!'''
-            #print(amb)
+            # print(amb)
             table.write('''
-            <tr>
-            <th>'''+str(df["date"][x])+'''</th>
-            <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
-            <th>'''+'{:,}'.format(df["deaths"][x])+'''</th>'''+
-            amb+ '''<tr>
+                <tr>
+                <th>''' + str(df["date"][x])+'''</th>
+                <th>''' + '{:,}'.format(df["cases"][x])+'''</th>
+                <th>''' + '{:,}'.format(df["deaths"][x])+'''</th>''' + 
+                amb+ '''<tr>
             ''')
 
     table.write('''</table>

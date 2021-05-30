@@ -47,8 +47,8 @@ with open('../us/noverview.html', 'a') as overview:
     except:
         active = 'No current data'
 
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Cases:   '+str(cases)+'</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Deaths: '+str(deaths)+'</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Recovered: '+str(recovered)+'</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Active: '+str(active)+'</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Cases:   ' + str(cases)+'</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Deaths: ' + str(deaths)+'</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Recovered: ' + str(recovered)+'</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Active: ' + str(active)+'</h6><br>')
     overview.write('</body></html>')

@@ -47,8 +47,8 @@ with open('../us/table.html', 'a') as table:
     table.write('''
     <table align="center" class='table' width='100%'>
         <tr class='text-primary'>
-            <th>Last Updated</th> 
-            <th>State/Territory</th> 
+            <th>Last Updated</th>
+            <th>State/Territory</th>
             <th>Cases</th>
             <th>Deaths</th>
             <th>Vaccinations</th>
@@ -58,7 +58,7 @@ with open('../us/table.html', 'a') as table:
         '''
         active = 'N/A'
         recovered = 'N/A'
-        
+
         if df["Active"][x] == df["Active"][x]:
             active = int(df["Active"][x])
             recovered = int(df["Confirmed"][x]) - active
@@ -69,11 +69,11 @@ with open('../us/table.html', 'a') as table:
 
         table.write('''
         <tr>
-            <th>'''+str(df["Last_Update"][x])+'''</th> 
-            <th>'''+str(df["Province_State"][x])+'''</th> 
-            <th>'''+'{:,}'.format(df["Confirmed"][x])+'''</th> 
-            <th>'''+'{:,}'.format(df["Deaths"][x])+'''</th> 
-            <th>'''+'{:,}'.format(int(vax_data))+'''</th>
+            <th>''' + str(df["Last_Update"][x])+'''</th>
+            <th>''' + str(df["Province_State"][x])+'''</th>
+            <th>''' + '{:,}'.format(df["Confirmed"][x])+'''</th>
+            <th>''' + '{:,}'.format(df["Deaths"][x])+'''</th>
+            <th>''' + '{:,}'.format(int(vax_data))+'''</th>
         <tr>
         ''')
 

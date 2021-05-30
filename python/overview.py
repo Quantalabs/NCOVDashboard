@@ -36,12 +36,12 @@ with open('../us/overview.html', 'w') as overview:
 
 with open('../us/overview.html', 'a') as overview:
     df.sort_values(by=['Confirmed'], inplace=True, ascending=False)
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Cases:   '+df['Province_State'].to_list()[0]+' with '+ '{:,}'.format(df['Confirmed'].to_list()[0])+' cases</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Cases: '+df['Province_State'].to_list()[-1]+' with '+ '{:,}'.format(df['Confirmed'].to_list()[-1])+' cases</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Cases:   ' + df['Province_State'].to_list()[0] + ' with ' + '{:,}'.format(df['Confirmed'].to_list()[0]) + ' cases</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Cases: ' + df['Province_State'].to_list()[-1]+' with ' +  '{:,}'.format(df['Confirmed'].to_list()[-1])+' cases</h6><br>')
     df.sort_values(by=['Deaths'], inplace=True, ascending=False)
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Deaths: '+df['Province_State'].to_list()[0]+' with '+'{:,}'.format(df['Deaths'].to_list()[0])+' deaths</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Deaths: '+df['Province_State'].to_list()[-1]+' with '+'{:,}'.format(df['Deaths'].to_list()[-1])+' deaths</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Highest Deaths: ' + df['Province_State'].to_list()[0]+' with ' + '{:,}'.format(df['Deaths'].to_list()[0])+' deaths</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Deaths: ' + df['Province_State'].to_list()[-1]+' with ' + '{:,}'.format(df['Deaths'].to_list()[-1])+' deaths</h6><br>')
     df.sort_values(by=['Active'], inplace=True, ascending=False)
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Most Active Cases: '+df['Province_State'].to_list()[0]+' with '+'{:,}'.format(df['Active'].to_list()[0])+' active cases</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Active Cases: '+df['Province_State'].to_list()[-1]+' with '+'{:,}'.format(df['Active'].to_list()[-1])+' active cases</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Most Active Cases: ' + df['Province_State'].to_list()[0]+' with ' + '{:,}'.format(df['Active'].to_list()[0])+' active cases</h6><br>')
+    overview.write('<h6 class=\'text-primary\' align=\'center\'>Lowest Active Cases: ' + df['Province_State'].to_list()[-1]+' with ' + '{:,}'.format(df['Active'].to_list()[-1])+' active cases</h6><br>')
     overview.write('</body></html>')
