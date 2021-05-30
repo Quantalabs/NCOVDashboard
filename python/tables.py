@@ -73,7 +73,7 @@ with open('../us/table.html', 'a') as table:
             <th>'''+str(df["Province_State"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Confirmed"][x])+'''</th> 
             <th>'''+'{:,}'.format(df["Deaths"][x])+'''</th> 
-            <th>'''+str(int(vax_data))+'''</th>
+            <th>'''+'{:,}'.format(int(vax_data))+'''</th>
         <tr>
         ''')
 
