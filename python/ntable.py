@@ -5,9 +5,9 @@ import io
 url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us.csv"
 download = requests.get(url).content
 
-df = pd.read_csv(io.StringIO(download.decode('utf-8')))
+df = pd.read_csv(io.StringIO(download.decode("utf-8")))
 
-htmlBase = '''
+htmlBase = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,13 +27,14 @@ htmlBase = '''
 </style>
 </head>
 <body>
-'''
+"""
 
-with open('../us/ntable.html', 'w') as table:
+with open("../us/ntable.html", "w") as table:
     table.write(htmlBase)
 
-with open('../us/ntable.html', 'a') as table:
-    table.write('''
+with open("../us/ntable.html", "a") as table:
+    table.write(
+        """
     <table align="center" class='table' width='100%'>
         <tr class='text-primary'>
             <th>Date</th>
@@ -41,37 +42,63 @@ with open('../us/ntable.html', 'a') as table:
             <th>Deaths</th>
             <th>New Cases</th>
         </tr>
-    ''')
+    """
+    )
     for x in range(len(df["date"].to_list())):
         if x == 0:
-            table.write('''
+            table.write(
+                """
             <tr>
-                <th>'''+str(df["date"][x])+'''</th>
-                <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
-                <th>'''+'{:,}'.format(df["deaths"][x])+'''</th>
-                <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
+                <th>"""
+                + str(df["date"][x])
+                + """</th>
+                <th>"""
+                + "{:,}".format(df["cases"][x])
+                + """</th> 
+                <th>"""
+                + "{:,}".format(df["deaths"][x])
+                + """</th>
+                <th>"""
+                + "{:,}".format(df["cases"][x])
+                + """</th> 
             <tr>
-            ''')
+            """
+            )
         else:
-            #print('Cases x '+str(df["cases"][x]))
-            #print('Cases x-1 '+str(df["cases"][x-1]))
-            #print('Deaths '+str(df["deaths"][x]))
-            #print('Date '+str(df["date"][x]))
+            # print('Cases x '+str(df["cases"][x]))
+            # print('Cases x-1 '+str(df["cases"][x-1]))
+            # print('Deaths '+str(df["deaths"][x]))
+            # print('Date '+str(df["date"][x]))
             amb = None
-            try: 
-                amb = '''<th>'''+'{:,}'.format(df["cases"][x]-df["cases"][x-1])+'''</th>'''
+            try:
+                amb = (
+                    """<th>"""
+                    + "{:,}".format(df["cases"][x] - df["cases"][x - 1])
+                    + """</th>"""
+                )
             except:
-                '''<th> No current data </th>'''
-                amb = '''No Case Data!'''
-            #print(amb)
-            table.write('''
+                """<th> No current data </th>"""
+                amb = """No Case Data!"""
+            # print(amb)
+            table.write(
+                """
             <tr>
-            <th>'''+str(df["date"][x])+'''</th>
-            <th>'''+'{:,}'.format(df["cases"][x])+'''</th> 
-            <th>'''+'{:,}'.format(df["deaths"][x])+'''</th>'''+
-            amb+ '''<tr>
-            ''')
+            <th>"""
+                + str(df["date"][x])
+                + """</th>
+            <th>"""
+                + "{:,}".format(df["cases"][x])
+                + """</th> 
+            <th>"""
+                + "{:,}".format(df["deaths"][x])
+                + """</th>"""
+                + amb
+                + """<tr>
+            """
+            )
 
-    table.write('''</table>
+    table.write(
+        """</table>
     </body>
-</html>''')
+</html>"""
+    )

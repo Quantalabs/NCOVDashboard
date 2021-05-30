@@ -6,7 +6,7 @@ Welcome to the Contributing Guidelines!
 
 Follow the issue template based on what you are submitting (eg. Bugs uses Bug template, Feature uses Feature template, etc.). Next, make sure that all fields are filled out.
 
-## PR's 
+## PR's
 
 There are two different types of PRs you might submit.
 
