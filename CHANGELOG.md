@@ -1,6 +1,22 @@
 # CHANGELOG
-View all updates to the Dashboard here. Releases are structured `vx.x.x-[Commits since base version released]`. For example, after 30 commits of the base `v1.0.0` release, the version will be `v1.0.0-30`.
+View all updates to the Dashboard here.
 
+## v1.1.0
+- Add vaccinations
+- Change case run time to run at `1:35 UTC` every day to get the latest possible data.
+- Add loader
+- Add code transformations with deepsource
+---
+## v1.0.0
+The first version is fully released! From the last version (v1.0.0-alpha):
+
+### Bug Fixes
+- Fix the python failing script, which stopped the deployment of the dashboard for a month.
+
+### New Features
+- None.
+
+---
 ## v1.0.0-alpha
 Initial Release with:
  - US Stats and graphs
