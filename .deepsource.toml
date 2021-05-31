@@ -11,10 +11,3 @@ enabled = true
 name = "javascript"
 enabled = true
 
-[[transformers]]
-name = "prettier"
-enabled = true
-
-[[transformers]]
-name = "black"
-enabled = true
