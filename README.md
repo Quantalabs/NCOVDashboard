@@ -19,8 +19,8 @@
 
 👤 **QLabs**
 
-* Website: quantalabs.github.io
-* Github: [@Quantalabs](https://github.com/Quantalabs)
+- Website: quantalabs.github.io
+- Github: [@Quantalabs](https://github.com/Quantalabs)
 
 ## 🤝 Contributing
 
@@ -35,5 +35,6 @@ Give a ⭐️ if this project helped you!
 Copyright © 2021 [QLabs](https://github.com/Quantalabs).<br />
 This project is [GPL--3.0](https://github.com/Quantalabs/NCOVDashboard/blob/main/LICENSE) licensed.
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
