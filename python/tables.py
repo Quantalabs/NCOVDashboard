@@ -52,8 +52,8 @@ with open("../us/table.html", "a") as table:
         """
     <table align="center" class='table' width='100%'>
         <tr class='text-primary'>
-            <th>Last Updated</th> 
-            <th>State/Territory</th> 
+            <th>Last Updated</th>
+            <th>State/Territory</th>
             <th>Cases</th>
             <th>Deaths</th>
             <th>Vaccinations</th>

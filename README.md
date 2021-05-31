@@ -7,8 +7,8 @@
   </a>
   <a href="https://github.com/Quantalabs/NCOVDashboard/actions/workflows/build.yml"><img src="https://img.shields.io/github/workflow/status/Quantalabs/NCOVDashboard/Update%20Case%20Data" alt="Build"></a>
   <img alt="Lines of Code" src="https://img.shields.io/tokei/lines/github/epispot/epispot?color=orange">
-  <a href="https://lgtm.com/projects/g/Quantalabs/NCOVDashboard/context:python"><img alt="Language grade: Python" src="https://img.shields.io/lgtm/grade/python/g/Quantalabs/NCOVDashboard.svg?logo=lgtm&logoWidth=18"/></a>
-  <a href="https://lgtm.com/projects/g/Quantalabs/NCOVDashboard/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/Quantalabs/NCOVDashboard.svg?logo=lgtm&logoWidth=18"/></a>
+  <a href="https://deepsource.io/gh/Quantalabs/NCOVDashboard/?ref=repository-badge" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://deepsource.io/gh/Quantalabs/NCOVDashboard.svg/?label=active+issues&show_trend=true"/></a>
+  <a href="https://deepsource.io/gh/Quantalabs/NCOVDashboard/?ref=repository-badge" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://deepsource.io/gh/Quantalabs/NCOVDashboard.svg/?label=resolved+issues&show_trend=true"/></a>
   <a href="https://github.com/soroushchehresa/awesome-coronavirus#web-apps"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
 </p>
 

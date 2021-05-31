@@ -60,7 +60,7 @@ with open("../us/ntable.html", "a") as table:
                 + """</th>
                 <th>"""
                 + "{:,}".format(df["cases"][x])
-                + """</th> 
+                + """</th>
             <tr>
             """
             )

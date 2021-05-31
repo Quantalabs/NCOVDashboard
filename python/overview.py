@@ -37,7 +37,6 @@ htmlBase = """
 
 with open("../us/overview.html", "w") as overview:
     overview.write(htmlBase)
-
 with open("../us/overview.html", "a") as overview:
     df.sort_values(by=["Confirmed"], inplace=True, ascending=False)
     overview.write(
