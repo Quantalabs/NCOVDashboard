@@ -21,6 +21,12 @@ If you're adding a new country, then make sure that:
 1. You're source is reliable, I'd highly suggest John Hopkins or Worldometers
 2. You have enough data. Simply having the amount of cases and deaths isn't enough.
 3. All workflows pass, if you have a bug which you can't fix, post it on Stack Overflow! You can get answers quick!
+
+NOTE: The build workflow might fail at certain times as it's time is set to UTC, so when you run it, it might try to fetch a file that does not exist, you can instead make sure that your code works with:
+```sh
+cd scripts
+bash update.sh
+```
 4. You've created a new directory for the country, like the [`/us`](https://github.com/Quantalabs/NCOVDashboard/tree/main/us) directory.
 
 You can then submit your PR to the repo, and it'll be merged ASAP.
