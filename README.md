@@ -1,7 +1,7 @@
 <p align='center'><img src="https://i.ibb.co/rvN91xr/Screenshot-2021-03-02-153146.jpg" alt="NCovDashboard Logo" border="0"></p>
 <h1 align="center">NCovDashboard </h1>
 <p align='center'>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.1.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Quantalabs/NCOVDashboard">
   <a href="https://github.com/Quantalabs/NCOVDashboard/blob/main/LICENSE" target="_blank">
     <img alt="License: GPL--3.0" src="https://img.shields.io/badge/License-GPL--3.0-yellow.svg" />
   </a>
