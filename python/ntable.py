@@ -42,7 +42,7 @@ with open('../us/ntable.html', 'a') as table:
             <th>New Cases</th>
         </tr>
     ''')
-    for x in range(len(df["date"].to_list())):
+    for x in range(len(df["date"].to_list())-1, -1, -1):
         if x == 0:
             table.write('''
             <tr>
