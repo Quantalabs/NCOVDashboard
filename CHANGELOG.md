@@ -2,7 +2,6 @@
 View all updates to the Dashboard here.
 
 ## v1.2.0
-### Dashboard
 - Add India to the dashboard
 - Order US Historical Data from most recent to oldest
 - Remove useless SCSS code
