@@ -1,6 +1,13 @@
 # CHANGELOG
 View all updates to the Dashboard here.
 
+## v1.2.0
+### Dashboard
+- Add India to the dashboard
+- Order US Historical Data from most recent to oldest
+- Remove useless SCSS code
+
+---
 ## v1.1.0
 - Add vaccinations
 - Change case run time to run at `1:35 UTC` every day to get the latest possible data.
