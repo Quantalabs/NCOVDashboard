@@ -13,8 +13,9 @@
 
 <blockquote align='center'>A simple COVID-19 Dashboard</blockquote>
 
-[View the Dashboard here](https://quantalabs.github.io/NCOVDashboard/us)
+[View the US Dashboard here](https://quantalabs.github.io/NCOVDashboard/us)
 
+[View the India Dashboard here](https://quantalabs.github.io/NCOVDashboard/India)
 ## Author
 
 👤 **QLabs**

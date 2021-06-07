@@ -2,5 +2,6 @@ import os
 
 for file in os.listdir('python/'):
   os.chdir('python/')
-  os.system('python '+file)
+  if not file.endswith('/'):
+    os.system('python '+file)
   os.chdir('..')
