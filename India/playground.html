@@ -26,8 +26,8 @@ Coded by www.creative-tim.com
   <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>India Statistics | NCOVDashboard</title>
-  <meta name="description" content="A COVID-19 Dashboard for India.">
+  <title>US Statistics | NCOVDashboard</title>
+  <meta name="description" content="A COVID-19 Dashboard for the US.">
   <meta name="author" content="Quantalabs">
   <meta name="copyright" content="2021">
   <meta name="robots" content="index, follow">
@@ -65,10 +65,29 @@ Coded by www.creative-tim.com
       66%  {transform:scale(var(--s,1)) translate(calc(1px - 50%),0%)}
       100% {transform:scale(var(--s,1)) translate(calc(0.5px - 50%),0%)}
     }
+    .slide_down:hover {
+      box-shadow: inset 0 100px 0 0 #9ec3ff;
+    }
+    .slide_down {
+      color: #FFF;
+      border: 2px solid #9ec3ff;
+      border-radius: 0px;
+      padding: 18px 36px;
+      display: inline-block;
+      font-family: "Lucida Console", Monaco, monospace;
+      font-size: 14px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 0 #9ec3ff;
+      -webkit-transition: ease-out 0.4s;
+      -moz-transition: ease-out 0.4s;
+      transition: ease-out 0.4s;
+    }
   </style>
 </head>
 
-<body onload="myFunction()" style="margin:0;">
+<body onload="myFunction()" style="margin:0;"> 
+<body style="margin:0;">
   <div class="shapes-8" id="loader"></div>
   <div id='body-content' style='display: none;'>
     <div class="wrapper">
@@ -81,14 +100,11 @@ Coded by www.creative-tim.com
           </a>
           <a href="https://github.com/Quantalabs/NCovDashboard" class="logo-normal" style="text-decoration: none; font-size: large;">
             NCovDashboard
-            <!-- <div class="logo-image-big">
-              <img src="../assets/img/logo-big.png">
-            </div> -->
           </a>
         </div>
         <div class="sidebar-wrapper" style="overflow-x: hidden;">
           <ul class="nav">
-            <li class="active ">
+            <li>
               <a href="index.html">
                 <i class="nc-icon nc-bank"></i>
                 <p>Overview</p>
@@ -100,7 +116,7 @@ Coded by www.creative-tim.com
                 <p>Numbers</p>
               </a>
             </li>
-            <li>
+            <li class="active">
               <a href="playground.html">
                 <i class="nc-icon nc-istanbul"></i>
                 <p>Playground</p>
@@ -117,59 +133,89 @@ Coded by www.creative-tim.com
       </div>
       <div class="main-panel">
         <div class="content">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="card card-stats">
+          <div class="col-sm-10" style="margin-left: auto; margin-right: auto;">
+            <div class="card card-stats">
                 <div class="card-body">
-                  <div id='HCC' class="text-center">
-                    <h5>Highest Case Count</h5>
-                    <img src="graph.png">
+                  <div id='Parameters' class="text-center">
+                      <h5>Set Parameters</h5>
+                      <sub>Once generated, the projection will be shown below.</sub>
+                      <br><br>
+                      <section class="inputs">
+                          <input name="Incubation Period" id="inc"  style="width: 5vw;">
+                          <label for="Incubation Period" style="margin-right: 1vw;">Incubation Period (days)</label>
+                          <input name="r0" id="r"  style="width: 5vw;">
+                          <label for="r0" style="margin-right: 1vw;">R-Naught</label>
+                          <input name="Recovery Rate" id="rr"  style="width: 5vw;">
+                          <label for="Recovery Rate">Recovery Rate (Decimal)</label>
+                      </section>
+                      <br>
+                      <section class="inputs">
+                        <input name="susceptible" id="s" style="width: 5vw;">
+                        <label for="susceptible" style="margin-right: 1vw;">Starting Susceptible Population</label>
+                        <input name="i" id="i"  style="width: 5vw;">
+                        <label for="i" style="margin-right: 1vw;">Starting Infected Population</label>
+                        <input name="recov" id="recov"  style="width: 5vw;">
+                        <label for="recov">Starting Recovered Population</label>
+                    </section>
                     <br>
-                    Data from John Hopkins University Dataset
+                      <section id="about">
+                        <p>
+                          Welcome to the playground! This is a tool unrelated to the dashboard, but allows
+                          <br> you to play around and model your own outbreak. This tool is built with the npm
+                          <br> package EpiJS, which allows you to model diseases.
+                        </p>
+                      </section>
+                      <br>
+                      <br>
+                      <section id="disclaimer">
+                        <p>
+                          DISCLAIMER: This tool should <em>not</em> be used for policy making or used as a decision making tool.
+                          <br>The purpose of this tool is only for the general public to play around with the data, but not to make any decisions.
+                        </p>
+                      </section>
+                      <button onclick="generate()" class="slide_down" style="margin: 1vw;">Generate</button>
+                      <br>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-body">
-                  <div id='QS' class="text-center">
-                    <h5>Quick Stats</h5>
-                    <br><br>
-                    <br><br>
-                    <br><br>
-                    <iframe src="overview.html" width="100%" style="border: hidden; scroll-behavior: smooth; overflow-x: hidden; overflow-y: visible; resize: vertical;height: 35vh;"></iframe>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <footer class="footer"">
+          <div class="col-sm-10" id="project" style="margin-left: auto; margin-right: auto; display:none;">
+            <div class="card card-stats">
+                <div class="card-body">
+                  <div id='Projection' class="text-center">
+                      <h5>Projected Output</h5>
+                      <sub>Made with <a href="https://github.com/Quantalabs/EpiJS">EpiJS</a></sub>
+                      <br><br>
+                      <canvas id="output"></canvas>
+                      <p id="cantsee">Can\'t see anything? Try and switch browsers or reload.</p>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <footer class="footer"">
           <div class="container-fluid">
-            <div class="row">
+              <div class="row">
               <nav class="footer-nav">
-                <ul>
+                  <ul>
                   <li><a href="https://github.com/Quantalabs/NCovDashboard" target="_blank">GitHub</a></li>
                   <li><a href="https://github.com/Quantalabs/NCovDashboard/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></li>
                   <li><a href="https://github.com/Quantalabs/NCovDashboard/blob/main/LICENSE" target="_blank">License</a></li>
-                </ul>
+                  </ul>
               </nav>
               <div class="credits ml-auto">
-                NOTE: Data may not always be accurate, and updates every 24 hrs.
+                  NOTE: Data may not always be accurate, and updates every 24 hrs.
               </div>
               <div class="credits ml-auto">
                   <span class="copyright">
                       © 2021 Quantalabs, Template from Creative Tim
                   </span>
               </div>
-            </div>
+              </div>
           </div>
-        </footer>
+          </footer>
       </div>
     </div>
   </div>
@@ -182,6 +228,9 @@ Coded by www.creative-tim.com
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Quantalabs/EpiJS/web/pre.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+  <script src="../us/javascript/playground.js" type="text/javascript"></script>
   <script>
     var myVar;
 
