@@ -1,6 +1,15 @@
 # CHANGELOG
 View all updates to the Dashboard here.
 
+---
+## v1.3.0
+### New Features
+- Add playground to the US and India dashboards using [EpiJS](https://epi.js.org)
+
+### Bug Fixes
+- Fix a bug in the case update runner script.
+
+---
 ## v1.2.0
 - Add India to the dashboard
 - Order US Historical Data from most recent to oldest
