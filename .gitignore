@@ -1,2 +1,6 @@
 examples/
 nucleo-icons.html
+
+# IDE
+.vscode
+.idea
