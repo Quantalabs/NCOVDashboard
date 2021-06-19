@@ -38,17 +38,7 @@ with open('../us/noverview.html', 'w') as overview:
 with open('../us/noverview.html', 'a') as overview:
     deaths = '{:,}'.format(np.sum(np.array(df['Deaths'].to_list())))
     cases = '{:,}'.format(np.sum(np.array(df['Confirmed'].to_list())))
-    try:
-        recovered = '{:,}'.format(np.sum(np.array(df['Confirmed'].to_list()))-np.sum(np.array(list(map(int, df['Active'].to_list())))))
-    except:
-        recovered = 'No current data'
-    try:
-        active = '{:,}'.format(np.sum(np.array(list(map(int, df['Active'].to_list())))))
-    except:
-        active = 'No current data'
 
     overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Cases:   ' + str(cases)+'</h6><br>')
     overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Deaths: ' + str(deaths)+'</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Recovered: ' + str(recovered)+'</h6><br>')
-    overview.write('<h6 class=\'text-primary\' align=\'center\'>Total Active: ' + str(active)+'</h6><br>')
     overview.write('</body></html>')
