@@ -1,8 +1,8 @@
 {
     "name": "NCOVDashboard",
-    "short_name": "COVID-19",
+    "short_name": "Dashboard",
     "lang": "en-US",
-    "start_url": "/index.html",
+    "start_url": "./index.html",
     "display": "standalone",
     "theme_color": "#15A0BB",
     "icons": [
