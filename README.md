@@ -1,3 +1,8 @@
+### This project has been archived
+The NYTimes closed their dataset recently. [The Biden Administration ended their covid team](https://www.washingtonpost.com/politics/2023/03/22/biden-disband-covid-team/) and I've decided that it's kind of useless to continue maintaining the project. (As of right now) the code works okay, so please fork it and run your own instance. 
+
+---
+
 <p align='center'><img src="https://i.ibb.co/rvN91xr/Screenshot-2021-03-02-153146.jpg" alt="NCovDashboard Logo" border="0"></p>
 <h1 align="center">NCovDashboard </h1>
 <p align='center'>
